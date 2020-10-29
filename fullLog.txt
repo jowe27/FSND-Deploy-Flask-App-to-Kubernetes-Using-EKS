@@ -1,0 +1,870 @@
+[Container] 2020/10/29 13:42:54 Waiting for agent ping
+[Container] 2020/10/29 13:42:56 Waiting for DOWNLOAD_SOURCE
+[Container] 2020/10/29 13:42:57 Phase is DOWNLOAD_SOURCE
+[Container] 2020/10/29 13:42:57 CODEBUILD_SRC_DIR=/codebuild/output/src682786126/src
+[Container] 2020/10/29 13:42:57 YAML location is /codebuild/output/src682786126/src/buildspec.yml
+[Container] 2020/10/29 13:42:57 Processing environment variables
+[Container] 2020/10/29 13:42:57 Decrypting parameter store environment variables
+[Container] 2020/10/29 13:42:57 Moving to directory /codebuild/output/src682786126/src
+[Container] 2020/10/29 13:42:57 Registering with agent
+[Container] 2020/10/29 13:42:57 Phases found in YAML: 4
+[Container] 2020/10/29 13:42:57  INSTALL: 5 commands
+[Container] 2020/10/29 13:42:57  PRE_BUILD: 5 commands
+[Container] 2020/10/29 13:42:57  BUILD: 1 commands
+[Container] 2020/10/29 13:42:57  POST_BUILD: 12 commands
+[Container] 2020/10/29 13:42:57 Phase complete: DOWNLOAD_SOURCE State: SUCCEEDED
+[Container] 2020/10/29 13:42:57 Phase context status code:  Message: 
+[Container] 2020/10/29 13:42:57 Entering phase INSTALL
+[Container] 2020/10/29 13:42:57 Running command curl -sS -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/aws-iam-authenticator
+
+[Container] 2020/10/29 13:42:57 Running command curl -sS -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/kubectl
+
+[Container] 2020/10/29 13:42:58 Running command chmod +x ./kubectl ./aws-iam-authenticator
+
+[Container] 2020/10/29 13:42:58 Running command export PATH=$PWD/:$PATH
+
+[Container] 2020/10/29 13:42:58 Running command apt-get update && apt-get -y install jq python3-pip python3-dev && pip3 install --upgrade awscli
+Get:1 http://ppa.launchpad.net trusty InRelease [20.8 kB]
+Ign http://archive.ubuntu.com trusty InRelease
+Get:2 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
+Get:3 http://archive.ubuntu.com trusty-security InRelease [65.9 kB]
+Get:4 http://archive.ubuntu.com trusty Release.gpg [933 B]
+Get:5 http://archive.ubuntu.com trusty Release [58.5 kB]
+Get:6 http://ppa.launchpad.net trusty/main amd64 Packages [3533 B]
+Get:7 http://archive.ubuntu.com trusty-updates/main Sources [532 kB]
+Get:8 http://archive.ubuntu.com trusty-updates/restricted Sources [6444 B]
+Get:9 http://archive.ubuntu.com trusty-updates/universe Sources [288 kB]
+Get:10 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1460 kB]
+Get:11 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [21.4 kB]
+Get:12 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [671 kB]
+Get:13 http://archive.ubuntu.com trusty-security/main Sources [220 kB]
+Get:14 http://archive.ubuntu.com trusty-security/restricted Sources [5050 B]
+Get:15 http://archive.ubuntu.com trusty-security/universe Sources [127 kB]
+Get:16 http://archive.ubuntu.com trusty-security/main amd64 Packages [1032 kB]
+Get:17 http://archive.ubuntu.com trusty-security/restricted amd64 Packages [18.1 kB]
+Get:18 http://archive.ubuntu.com trusty-security/universe amd64 Packages [378 kB]
+Get:19 http://archive.ubuntu.com trusty/main Sources [1335 kB]
+Get:20 http://archive.ubuntu.com trusty/restricted Sources [5335 B]
+Get:21 http://archive.ubuntu.com trusty/universe Sources [7926 kB]
+Get:22 http://archive.ubuntu.com trusty/main amd64 Packages [1743 kB]
+Get:23 http://archive.ubuntu.com trusty/restricted amd64 Packages [16.0 kB]
+Get:24 http://archive.ubuntu.com trusty/universe amd64 Packages [7589 kB]
+Fetched 23.6 MB in 10s (2174 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  libpython3-dev libpython3.4 libpython3.4-dev libpython3.4-minimal
+  libpython3.4-stdlib python-chardet-whl python-colorama-whl
+  python-distlib-whl python-html5lib-whl python-pip-whl python-requests-whl
+  python-setuptools-whl python-six-whl python-urllib3-whl python3-chardet
+  python3-colorama python3-distlib python3-html5lib python3-pkg-resources
+  python3-requests python3-setuptools python3-six python3-urllib3
+  python3-wheel python3.4 python3.4-dev python3.4-minimal
+Suggested packages:
+  python3-genshi python3-lxml python3.4-venv python3.4-doc binfmt-support
+The following NEW packages will be installed:
+  jq libpython3-dev libpython3.4 libpython3.4-dev python-chardet-whl
+  python-colorama-whl python-distlib-whl python-html5lib-whl python-pip-whl
+  python-requests-whl python-setuptools-whl python-six-whl python-urllib3-whl
+  python3-chardet python3-colorama python3-dev python3-distlib
+  python3-html5lib python3-pip python3-pkg-resources python3-requests
+  python3-setuptools python3-six python3-urllib3 python3-wheel python3.4-dev
+The following packages will be upgraded:
+  libpython3.4-minimal libpython3.4-stdlib python3.4 python3.4-minimal
+4 upgraded, 26 newly installed, 0 to remove and 109 not upgraded.
+Need to get 25.2 MB of archives.
+After this operation, 40.6 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python3.4 amd64 3.4.3-1ubuntu1~14.04.7 [178 kB]
+Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python3.4-minimal amd64 3.4.3-1ubuntu1~14.04.7 [1224 kB]
+Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libpython3.4-stdlib amd64 3.4.3-1ubuntu1~14.04.7 [1986 kB]
+Get:4 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libpython3.4-minimal amd64 3.4.3-1ubuntu1~14.04.7 [461 kB]
+Get:5 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libpython3.4 amd64 3.4.3-1ubuntu1~14.04.7 [1303 kB]
+Get:6 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libpython3.4-dev amd64 3.4.3-1ubuntu1~14.04.7 [17.8 MB]
+Get:7 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe jq amd64 1.3-1.1ubuntu1.1 [98.1 kB]
+Get:8 http://archive.ubuntu.com/ubuntu/ trusty/main libpython3-dev amd64 3.4.0-0ubuntu2 [7002 B]
+Get:9 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python3-pkg-resources all 3.3-1ubuntu2 [31.7 kB]
+Get:10 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe python-chardet-whl all 2.2.1-2~ubuntu1 [170 kB]
+Get:11 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe python-colorama-whl all 0.2.5-0.1ubuntu2 [18.2 kB]
+Get:12 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe python-distlib-whl all 0.1.8-1ubuntu1 [140 kB]
+Get:13 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-html5lib-whl all 0.999-3~ubuntu1 [109 kB]
+Get:14 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-six-whl all 1.5.2-1ubuntu1.1 [10.6 kB]
+Get:15 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-urllib3-whl all 1.7.1-1ubuntu4.1 [63.9 kB]
+Get:16 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-requests-whl all 2.2.1-1ubuntu0.4 [228 kB]
+Get:17 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-setuptools-whl all 3.3-1ubuntu2 [244 kB]
+Get:18 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe python-pip-whl all 1.5.4-1ubuntu4 [111 kB]
+Get:19 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python3-chardet all 2.2.1-2~ubuntu1 [96.5 kB]
+Get:20 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe python3-colorama all 0.2.5-0.1ubuntu2 [12.0 kB]
+Get:21 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python3.4-dev amd64 3.4.3-1ubuntu1~14.04.7 [421 kB]
+Get:22 http://archive.ubuntu.com/ubuntu/ trusty/main python3-dev amd64 3.4.0-0ubuntu2 [1192 B]
+Get:23 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe python3-distlib all 0.1.8-1ubuntu1 [113 kB]
+Get:24 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python3-six all 1.5.2-1ubuntu1.1 [8438 B]
+Get:25 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe python3-html5lib all 0.999-3~ubuntu1 [79.7 kB]
+Get:26 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python3-urllib3 all 1.7.1-1ubuntu4.1 [39.5 kB]
+Get:27 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python3-requests all 2.2.1-1ubuntu0.4 [43.3 kB]
+Get:28 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python3-setuptools all 3.3-1ubuntu2 [144 kB]
+Get:29 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe python3-pip all 1.5.4-1ubuntu4 [80.3 kB]
+Get:30 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python3-wheel all 0.24.0-1~ubuntu1.1 [44.8 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Fetched 25.2 MB in 7s (3172 kB/s)
+(Reading database ... 28008 files and directories currently installed.)
+Preparing to unpack .../python3.4_3.4.3-1ubuntu1~14.04.7_amd64.deb ...
+Unpacking python3.4 (3.4.3-1ubuntu1~14.04.7) over (3.4.3-1ubuntu1~14.04.5) ...
+Preparing to unpack .../python3.4-minimal_3.4.3-1ubuntu1~14.04.7_amd64.deb ...
+Unpacking python3.4-minimal (3.4.3-1ubuntu1~14.04.7) over (3.4.3-1ubuntu1~14.04.5) ...
+Preparing to unpack .../libpython3.4-stdlib_3.4.3-1ubuntu1~14.04.7_amd64.deb ...
+Unpacking libpython3.4-stdlib:amd64 (3.4.3-1ubuntu1~14.04.7) over (3.4.3-1ubuntu1~14.04.5) ...
+Preparing to unpack .../libpython3.4-minimal_3.4.3-1ubuntu1~14.04.7_amd64.deb ...
+Unpacking libpython3.4-minimal:amd64 (3.4.3-1ubuntu1~14.04.7) over (3.4.3-1ubuntu1~14.04.5) ...
+Selecting previously unselected package libpython3.4:amd64.
+Preparing to unpack .../libpython3.4_3.4.3-1ubuntu1~14.04.7_amd64.deb ...
+Unpacking libpython3.4:amd64 (3.4.3-1ubuntu1~14.04.7) ...
+Selecting previously unselected package libpython3.4-dev:amd64.
+Preparing to unpack .../libpython3.4-dev_3.4.3-1ubuntu1~14.04.7_amd64.deb ...
+Unpacking libpython3.4-dev:amd64 (3.4.3-1ubuntu1~14.04.7) ...
+Selecting previously unselected package jq.
+Preparing to unpack .../jq_1.3-1.1ubuntu1.1_amd64.deb ...
+Unpacking jq (1.3-1.1ubuntu1.1) ...
+Selecting previously unselected package libpython3-dev:amd64.
+Preparing to unpack .../libpython3-dev_3.4.0-0ubuntu2_amd64.deb ...
+Unpacking libpython3-dev:amd64 (3.4.0-0ubuntu2) ...
+Selecting previously unselected package python3-pkg-resources.
+Preparing to unpack .../python3-pkg-resources_3.3-1ubuntu2_all.deb ...
+Unpacking python3-pkg-resources (3.3-1ubuntu2) ...
+Selecting previously unselected package python-chardet-whl.
+Preparing to unpack .../python-chardet-whl_2.2.1-2~ubuntu1_all.deb ...
+Unpacking python-chardet-whl (2.2.1-2~ubuntu1) ...
+Selecting previously unselected package python-colorama-whl.
+Preparing to unpack .../python-colorama-whl_0.2.5-0.1ubuntu2_all.deb ...
+Unpacking python-colorama-whl (0.2.5-0.1ubuntu2) ...
+Selecting previously unselected package python-distlib-whl.
+Preparing to unpack .../python-distlib-whl_0.1.8-1ubuntu1_all.deb ...
+Unpacking python-distlib-whl (0.1.8-1ubuntu1) ...
+Selecting previously unselected package python-html5lib-whl.
+Preparing to unpack .../python-html5lib-whl_0.999-3~ubuntu1_all.deb ...
+Unpacking python-html5lib-whl (0.999-3~ubuntu1) ...
+Selecting previously unselected package python-six-whl.
+Preparing to unpack .../python-six-whl_1.5.2-1ubuntu1.1_all.deb ...
+Unpacking python-six-whl (1.5.2-1ubuntu1.1) ...
+Selecting previously unselected package python-urllib3-whl.
+Preparing to unpack .../python-urllib3-whl_1.7.1-1ubuntu4.1_all.deb ...
+Unpacking python-urllib3-whl (1.7.1-1ubuntu4.1) ...
+Selecting previously unselected package python-requests-whl.
+Preparing to unpack .../python-requests-whl_2.2.1-1ubuntu0.4_all.deb ...
+Unpacking python-requests-whl (2.2.1-1ubuntu0.4) ...
+Selecting previously unselected package python-setuptools-whl.
+Preparing to unpack .../python-setuptools-whl_3.3-1ubuntu2_all.deb ...
+Unpacking python-setuptools-whl (3.3-1ubuntu2) ...
+Selecting previously unselected package python-pip-whl.
+Preparing to unpack .../python-pip-whl_1.5.4-1ubuntu4_all.deb ...
+Unpacking python-pip-whl (1.5.4-1ubuntu4) ...
+Selecting previously unselected package python3-chardet.
+Preparing to unpack .../python3-chardet_2.2.1-2~ubuntu1_all.deb ...
+Unpacking python3-chardet (2.2.1-2~ubuntu1) ...
+Selecting previously unselected package python3-colorama.
+Preparing to unpack .../python3-colorama_0.2.5-0.1ubuntu2_all.deb ...
+Unpacking python3-colorama (0.2.5-0.1ubuntu2) ...
+Selecting previously unselected package python3.4-dev.
+Preparing to unpack .../python3.4-dev_3.4.3-1ubuntu1~14.04.7_amd64.deb ...
+Unpacking python3.4-dev (3.4.3-1ubuntu1~14.04.7) ...
+Selecting previously unselected package python3-dev.
+Preparing to unpack .../python3-dev_3.4.0-0ubuntu2_amd64.deb ...
+Unpacking python3-dev (3.4.0-0ubuntu2) ...
+Selecting previously unselected package python3-distlib.
+Preparing to unpack .../python3-distlib_0.1.8-1ubuntu1_all.deb ...
+Unpacking python3-distlib (0.1.8-1ubuntu1) ...
+Selecting previously unselected package python3-six.
+Preparing to unpack .../python3-six_1.5.2-1ubuntu1.1_all.deb ...
+Unpacking python3-six (1.5.2-1ubuntu1.1) ...
+Selecting previously unselected package python3-html5lib.
+Preparing to unpack .../python3-html5lib_0.999-3~ubuntu1_all.deb ...
+Unpacking python3-html5lib (0.999-3~ubuntu1) ...
+Selecting previously unselected package python3-urllib3.
+Preparing to unpack .../python3-urllib3_1.7.1-1ubuntu4.1_all.deb ...
+Unpacking python3-urllib3 (1.7.1-1ubuntu4.1) ...
+Selecting previously unselected package python3-requests.
+Preparing to unpack .../python3-requests_2.2.1-1ubuntu0.4_all.deb ...
+Unpacking python3-requests (2.2.1-1ubuntu0.4) ...
+Selecting previously unselected package python3-setuptools.
+Preparing to unpack .../python3-setuptools_3.3-1ubuntu2_all.deb ...
+Unpacking python3-setuptools (3.3-1ubuntu2) ...
+Selecting previously unselected package python3-pip.
+Preparing to unpack .../python3-pip_1.5.4-1ubuntu4_all.deb ...
+Unpacking python3-pip (1.5.4-1ubuntu4) ...
+Selecting previously unselected package python3-wheel.
+Preparing to unpack .../python3-wheel_0.24.0-1~ubuntu1.1_all.deb ...
+Unpacking python3-wheel (0.24.0-1~ubuntu1.1) ...
+Processing triggers for mime-support (3.54ubuntu1.1) ...
+Setting up libpython3.4-minimal:amd64 (3.4.3-1ubuntu1~14.04.7) ...
+Setting up python3.4-minimal (3.4.3-1ubuntu1~14.04.7) ...
+Setting up libpython3.4-stdlib:amd64 (3.4.3-1ubuntu1~14.04.7) ...
+Setting up python3.4 (3.4.3-1ubuntu1~14.04.7) ...
+Setting up libpython3.4:amd64 (3.4.3-1ubuntu1~14.04.7) ...
+Setting up libpython3.4-dev:amd64 (3.4.3-1ubuntu1~14.04.7) ...
+Setting up jq (1.3-1.1ubuntu1.1) ...
+Setting up libpython3-dev:amd64 (3.4.0-0ubuntu2) ...
+Setting up python3-pkg-resources (3.3-1ubuntu2) ...
+Setting up python-chardet-whl (2.2.1-2~ubuntu1) ...
+Setting up python-colorama-whl (0.2.5-0.1ubuntu2) ...
+Setting up python-distlib-whl (0.1.8-1ubuntu1) ...
+Setting up python-html5lib-whl (0.999-3~ubuntu1) ...
+Setting up python-six-whl (1.5.2-1ubuntu1.1) ...
+Setting up python-urllib3-whl (1.7.1-1ubuntu4.1) ...
+Setting up python-requests-whl (2.2.1-1ubuntu0.4) ...
+Setting up python-setuptools-whl (3.3-1ubuntu2) ...
+Setting up python-pip-whl (1.5.4-1ubuntu4) ...
+Setting up python3-chardet (2.2.1-2~ubuntu1) ...
+Setting up python3-colorama (0.2.5-0.1ubuntu2) ...
+Setting up python3.4-dev (3.4.3-1ubuntu1~14.04.7) ...
+Setting up python3-dev (3.4.0-0ubuntu2) ...
+Setting up python3-distlib (0.1.8-1ubuntu1) ...
+Setting up python3-six (1.5.2-1ubuntu1.1) ...
+Setting up python3-html5lib (0.999-3~ubuntu1) ...
+Setting up python3-urllib3 (1.7.1-1ubuntu4.1) ...
+Setting up python3-requests (2.2.1-1ubuntu0.4) ...
+Setting up python3-setuptools (3.3-1ubuntu2) ...
+Setting up python3-pip (1.5.4-1ubuntu4) ...
+Setting up python3-wheel (0.24.0-1~ubuntu1.1) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.11) ...
+Downloading/unpacking awscli
+Downloading/unpacking PyYAML>=3.10,<5.3 (from awscli)
+  Running setup.py (path:/tmp/pip_build_root/PyYAML/setup.py) egg_info for package PyYAML
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+Downloading/unpacking rsa>=3.1.2,<=4.0.0 (from awscli)
+  Downloading rsa-4.0-py2.py3-none-any.whl
+Downloading/unpacking colorama>=0.2.5,<0.4.2 from https://files.pythonhosted.org/packages/4f/a6/728666f39bfff1719fc94c481890b2106837da9318031f71a8424b662e12/colorama-0.4.1-py2.py3-none-any.whl#sha256=f8ac84de7840f5b9c4e3347b3c1eaa50f7e49c2b07596221daec5edaabbd7c48 (from awscli)
+  Downloading colorama-0.4.1-py2.py3-none-any.whl
+Downloading/unpacking s3transfer>=0.3.0,<0.4.0 (from awscli)
+Downloading/unpacking docutils>=0.10,<0.16 (from awscli)
+Downloading/unpacking botocore==1.19.7 (from awscli)
+Downloading/unpacking pyasn1>=0.1.3 (from rsa>=3.1.2,<=4.0.0->awscli)
+Downloading/unpacking python-dateutil>=2.1,<3.0.0 (from botocore==1.19.7->awscli)
+Downloading/unpacking jmespath>=0.7.1,<1.0.0 (from botocore==1.19.7->awscli)
+  Downloading jmespath-0.10.0-py2.py3-none-any.whl
+Downloading/unpacking urllib3>=1.25.4,<1.25.8 (from botocore==1.19.7->awscli)
+Downloading/unpacking six>=1.5 from https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl#sha256=8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced (from python-dateutil>=2.1,<3.0.0->botocore==1.19.7->awscli)
+  Downloading six-1.15.0-py2.py3-none-any.whl
+Installing collected packages: awscli, PyYAML, rsa, colorama, s3transfer, docutils, botocore, pyasn1, python-dateutil, jmespath, urllib3, six
+  Running setup.py install for PyYAML
+    building '_yaml' extension
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -fPIC -I/usr/include/python3.4m -c ext/_yaml.c -o build/temp.linux-x86_64-3.4/ext/_yaml.o
+    In file included from ext/_yaml.c:596:0:
+    ext/_yaml.h:10:0: warning: "PyString_CheckExact" redefined [enabled by default]
+     #define PyString_CheckExact PyBytes_CheckExact
+     ^
+    ext/_yaml.c:486:0: note: this is the location of the previous definition
+       #define PyString_CheckExact          PyUnicode_CheckExact
+     ^
+    ext/_yaml.c: In function '__pyx_pf_5_yaml_get_version_string':
+    ext/_yaml.c:1888:17: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+       __pyx_v_value = yaml_get_version_string();
+                     ^
+    ext/_yaml.c: In function '__pyx_pf_5_yaml_7CParser___init__':
+    ext/_yaml.c:3388:5: warning: passing argument 2 of 'yaml_parser_set_input' from incompatible pointer type [enabled by default]
+         yaml_parser_set_input((&__pyx_v_self->parser), __pyx_f_5_yaml_input_handler, ((void *)__pyx_v_self));
+         ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:1367:1: note: expected 'int (*)(void *, unsigned char *, size_t,  size_t *)' but argument is of type 'int (*)(void *, char *, size_t,  size_t *)'
+     yaml_parser_set_input(yaml_parser_t *parser,
+     ^
+    ext/_yaml.c:3629:5: warning: pointer targets in passing argument 2 of 'yaml_parser_set_input_string' differ in signedness [-Wpointer-sign]
+         yaml_parser_set_input_string((&__pyx_v_self->parser), PyString_AS_STRING(__pyx_v_stream), PyString_GET_SIZE(__pyx_v_stream));
+         ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:1341:1: note: expected 'const unsigned char *' but argument is of type 'char *'
+     yaml_parser_set_input_string(yaml_parser_t *parser,
+     ^
+    ext/_yaml.c: In function '__pyx_f_5_yaml_7CParser__token_to_object':
+    ext/_yaml.c:5463:5: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+         __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.tag_directive.handle); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 417, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:5475:5: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+         __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.tag_directive.prefix); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 418, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:6477:5: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+         __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.alias.value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 448, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:6561:5: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+         __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.anchor.value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 451, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:6645:5: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+         __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.tag.handle); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 454, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:6657:5: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+         __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.tag.suffix); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 455, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:6781:5: warning: pointer targets in passing argument 1 of 'PyUnicode_DecodeUTF8' differ in signedness [-Wpointer-sign]
+         __pyx_t_2 = PyUnicode_DecodeUTF8(__pyx_v_token->data.scalar.value, __pyx_v_token->data.scalar.length, ((char *)"strict")); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 460, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:1276:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+                           ^
+    ext/_yaml.c: In function '__pyx_f_5_yaml_7CParser__event_to_object':
+    ext/_yaml.c:8462:9: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+             __pyx_t_4 = PyUnicode_FromString(__pyx_v_tag_directive->handle); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 574, __pyx_L1_error)
+             ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:8474:9: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+             __pyx_t_4 = PyUnicode_FromString(__pyx_v_tag_directive->prefix); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 575, __pyx_L1_error)
+             ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:8717:5: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+         __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.alias.anchor); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 586, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:8821:7: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+           __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.scalar.anchor); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 591, __pyx_L1_error)
+           ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:8862:7: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+           __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.scalar.tag); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 594, __pyx_L1_error)
+           ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:8883:5: warning: pointer targets in passing argument 1 of 'PyUnicode_DecodeUTF8' differ in signedness [-Wpointer-sign]
+         __pyx_t_4 = PyUnicode_DecodeUTF8(__pyx_v_event->data.scalar.value, __pyx_v_event->data.scalar.length, ((char *)"strict")); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 595, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:1276:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+                           ^
+    ext/_yaml.c:9224:7: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+           __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.sequence_start.anchor); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 620, __pyx_L1_error)
+           ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:9265:7: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+           __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.sequence_start.tag); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 623, __pyx_L1_error)
+           ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:9497:7: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+           __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.mapping_start.anchor); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 637, __pyx_L1_error)
+           ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:9538:7: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+           __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.mapping_start.tag); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 640, __pyx_L1_error)
+           ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c: In function '__pyx_f_5_yaml_7CParser__compose_node':
+    ext/_yaml.c:11211:5: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+         __pyx_t_3 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.alias.anchor); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 734, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:11531:5: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+         __pyx_t_6 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.scalar.anchor); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 750, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:11587:5: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+         __pyx_t_6 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.sequence_start.anchor); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 753, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c:11643:5: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+         __pyx_t_6 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.mapping_start.anchor); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 756, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c: In function '__pyx_f_5_yaml_7CParser__compose_scalar_node':
+    ext/_yaml.c:12301:3: warning: pointer targets in passing argument 1 of 'PyUnicode_DecodeUTF8' differ in signedness [-Wpointer-sign]
+       __pyx_t_2 = PyUnicode_DecodeUTF8(__pyx_v_self->parsed_event.data.scalar.value, __pyx_v_self->parsed_event.data.scalar.length, ((char *)"strict")); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 791, __pyx_L1_error)
+       ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:1276:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+                           ^
+    ext/_yaml.c:12524:5: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+         __pyx_t_2 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.scalar.tag); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 804, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c: In function '__pyx_f_5_yaml_7CParser__compose_sequence_node':
+    ext/_yaml.c:13062:5: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+         __pyx_t_3 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.sequence_start.tag); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 837, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c: In function '__pyx_f_5_yaml_7CParser__compose_mapping_node':
+    ext/_yaml.c:13687:5: warning: pointer targets in passing argument 1 of 'PyUnicode_FromString' differ in signedness [-Wpointer-sign]
+         __pyx_t_3 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.mapping_start.tag); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 876, __pyx_L1_error)
+         ^
+    In file included from /usr/include/python3.4m/Python.h:77:0,
+                     from ext/_yaml.c:4:
+    /usr/include/python3.4m/unicodeobject.h:718:23: note: expected 'const char *' but argument is of type 'yaml_char_t *'
+     PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                           ^
+    ext/_yaml.c: In function '__pyx_pf_5_yaml_8CEmitter___init__':
+    ext/_yaml.c:15018:3: warning: passing argument 2 of 'yaml_emitter_set_output' from incompatible pointer type [enabled by default]
+       yaml_emitter_set_output((&__pyx_v_self->emitter), __pyx_f_5_yaml_output_handler, ((void *)__pyx_v_self));
+       ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:1829:1: note: expected 'int (*)(void *, unsigned char *, size_t)' but argument is of type 'int (*)(void *, char *, size_t)'
+     yaml_emitter_set_output(yaml_emitter_t *emitter,
+     ^
+    ext/_yaml.c: In function '__pyx_f_5_yaml_8CEmitter__object_to_event':
+    ext/_yaml.c:16370:44: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+             __pyx_v_tag_directives_end->handle = PyString_AS_STRING(__pyx_v_handle);
+                                                ^
+    ext/_yaml.c:16485:44: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+             __pyx_v_tag_directives_end->prefix = PyString_AS_STRING(__pyx_v_prefix);
+                                                ^
+    ext/_yaml.c:16822:5: warning: pointer targets in passing argument 2 of 'yaml_alias_event_initialize' differ in signedness [-Wpointer-sign]
+         __pyx_t_2 = ((yaml_alias_event_initialize(__pyx_v_event, __pyx_v_anchor) == 0) != 0);
+         ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:553:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_alias_event_initialize(yaml_event_t *event, yaml_char_t *anchor);
+     ^
+    ext/_yaml.c:17537:5: warning: pointer targets in passing argument 2 of 'yaml_scalar_event_initialize' differ in signedness [-Wpointer-sign]
+         __pyx_t_2 = ((yaml_scalar_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+         ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:578:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_scalar_event_initialize(yaml_event_t *event,
+     ^
+    ext/_yaml.c:17537:5: warning: pointer targets in passing argument 3 of 'yaml_scalar_event_initialize' differ in signedness [-Wpointer-sign]
+         __pyx_t_2 = ((yaml_scalar_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+         ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:578:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_scalar_event_initialize(yaml_event_t *event,
+     ^
+    ext/_yaml.c:17537:5: warning: pointer targets in passing argument 4 of 'yaml_scalar_event_initialize' differ in signedness [-Wpointer-sign]
+         __pyx_t_2 = ((yaml_scalar_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+         ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:578:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_scalar_event_initialize(yaml_event_t *event,
+     ^
+    ext/_yaml.c:17971:5: warning: pointer targets in passing argument 2 of 'yaml_sequence_start_event_initialize' differ in signedness [-Wpointer-sign]
+         __pyx_t_3 = ((yaml_sequence_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+         ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:601:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_sequence_start_event_initialize(yaml_event_t *event,
+     ^
+    ext/_yaml.c:17971:5: warning: pointer targets in passing argument 3 of 'yaml_sequence_start_event_initialize' differ in signedness [-Wpointer-sign]
+         __pyx_t_3 = ((yaml_sequence_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+         ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:601:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_sequence_start_event_initialize(yaml_event_t *event,
+     ^
+    ext/_yaml.c:18405:5: warning: pointer targets in passing argument 2 of 'yaml_mapping_start_event_initialize' differ in signedness [-Wpointer-sign]
+         __pyx_t_2 = ((yaml_mapping_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+         ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:633:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_mapping_start_event_initialize(yaml_event_t *event,
+     ^
+    ext/_yaml.c:18405:5: warning: pointer targets in passing argument 3 of 'yaml_mapping_start_event_initialize' differ in signedness [-Wpointer-sign]
+         __pyx_t_2 = ((yaml_mapping_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+         ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:633:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_mapping_start_event_initialize(yaml_event_t *event,
+     ^
+    ext/_yaml.c: In function '__pyx_pf_5_yaml_8CEmitter_12serialize':
+    ext/_yaml.c:19975:42: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+           __pyx_v_tag_directives_end->handle = PyString_AS_STRING(__pyx_v_handle);
+                                              ^
+    ext/_yaml.c:20090:42: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+           __pyx_v_tag_directives_end->prefix = PyString_AS_STRING(__pyx_v_prefix);
+                                              ^
+    ext/_yaml.c: In function '__pyx_f_5_yaml_8CEmitter__serialize_node':
+    ext/_yaml.c:20947:5: warning: pointer targets in passing argument 2 of 'yaml_alias_event_initialize' differ in signedness [-Wpointer-sign]
+         __pyx_t_2 = ((yaml_alias_event_initialize((&__pyx_v_event), __pyx_v_anchor) == 0) != 0);
+         ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:553:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_alias_event_initialize(yaml_event_t *event, yaml_char_t *anchor);
+     ^
+    ext/_yaml.c:21758:7: warning: pointer targets in passing argument 2 of 'yaml_scalar_event_initialize' differ in signedness [-Wpointer-sign]
+           __pyx_t_2 = ((yaml_scalar_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+           ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:578:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_scalar_event_initialize(yaml_event_t *event,
+     ^
+    ext/_yaml.c:21758:7: warning: pointer targets in passing argument 3 of 'yaml_scalar_event_initialize' differ in signedness [-Wpointer-sign]
+           __pyx_t_2 = ((yaml_scalar_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+           ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:578:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_scalar_event_initialize(yaml_event_t *event,
+     ^
+    ext/_yaml.c:21758:7: warning: pointer targets in passing argument 4 of 'yaml_scalar_event_initialize' differ in signedness [-Wpointer-sign]
+           __pyx_t_2 = ((yaml_scalar_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+           ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:578:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_scalar_event_initialize(yaml_event_t *event,
+     ^
+    ext/_yaml.c:22145:7: warning: pointer targets in passing argument 2 of 'yaml_sequence_start_event_initialize' differ in signedness [-Wpointer-sign]
+           __pyx_t_2 = ((yaml_sequence_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+           ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:601:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_sequence_start_event_initialize(yaml_event_t *event,
+     ^
+    ext/_yaml.c:22145:7: warning: pointer targets in passing argument 3 of 'yaml_sequence_start_event_initialize' differ in signedness [-Wpointer-sign]
+           __pyx_t_2 = ((yaml_sequence_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+           ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:601:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_sequence_start_event_initialize(yaml_event_t *event,
+     ^
+    ext/_yaml.c:22675:7: warning: pointer targets in passing argument 2 of 'yaml_mapping_start_event_initialize' differ in signedness [-Wpointer-sign]
+           __pyx_t_2 = ((yaml_mapping_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+           ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:633:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_mapping_start_event_initialize(yaml_event_t *event,
+     ^
+    ext/_yaml.c:22675:7: warning: pointer targets in passing argument 3 of 'yaml_mapping_start_event_initialize' differ in signedness [-Wpointer-sign]
+           __pyx_t_2 = ((yaml_mapping_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+           ^
+    In file included from ext/_yaml.h:2:0,
+                     from ext/_yaml.c:596:
+    /usr/include/yaml.h:633:1: note: expected 'yaml_char_t *' but argument is of type 'char *'
+     yaml_mapping_start_event_initialize(yaml_event_t *event,
+     ^
+    x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.4/ext/_yaml.o -lyaml -o build/lib.linux-x86_64-3.4/_yaml.cpython-34m.so
+    /usr/lib/python3.4/distutils/dist.py:260: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+  Found existing installation: colorama 0.2.5
+    Not uninstalling colorama at /usr/lib/python3/dist-packages, owned by OS
+  Found existing installation: urllib3 1.7.1
+    Not uninstalling urllib3 at /usr/lib/python3/dist-packages, owned by OS
+  Found existing installation: six 1.5.2
+    Not uninstalling six at /usr/lib/python3/dist-packages, owned by OS
+Successfully installed awscli PyYAML rsa colorama s3transfer docutils botocore pyasn1 python-dateutil jmespath urllib3 six
+Cleaning up...
+
+[Container] 2020/10/29 13:43:49 Phase complete: INSTALL State: SUCCEEDED
+[Container] 2020/10/29 13:43:49 Phase context status code:  Message: 
+[Container] 2020/10/29 13:43:49 Entering phase PRE_BUILD
+[Container] 2020/10/29 13:43:49 Running command TAG="$REPOSITORY_NAME.$REPOSITORY_BRANCH.$ENVIRONMENT_NAME.$(date +%Y-%m-%d.%H.%M.%S).$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
+
+[Container] 2020/10/29 13:43:49 Running command sed -i 's@CONTAINER_IMAGE@'"$REPOSITORY_URI:$TAG"'@' simple-jwt-api.yml
+
+[Container] 2020/10/29 13:43:49 Running command sed -i 's@JWT_SECRET_VALUE@'"$JWT_SECRET"'@' simple-jwt-api.yml
+
+[Container] 2020/10/29 13:43:49 Running command $(aws ecr get-login --no-include-email)
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+Login Succeeded
+
+[Container] 2020/10/29 13:43:50 Running command export KUBECONFIG=$HOME/.kube/config
+
+[Container] 2020/10/29 13:43:50 Phase complete: PRE_BUILD State: SUCCEEDED
+[Container] 2020/10/29 13:43:50 Phase context status code:  Message: 
+[Container] 2020/10/29 13:43:50 Entering phase BUILD
+[Container] 2020/10/29 13:43:50 Running command docker build --tag $REPOSITORY_URI:$TAG .
+Sending build context to Docker daemon  93.12MB
+
+Step 1/6 : FROM python:stretch
+stretch: Pulling from library/python
+092586df9206: Pulling fs layer
+ef599477fae0: Pulling fs layer
+4530c6472b5d: Pulling fs layer
+d34d61487075: Pulling fs layer
+87fc2710b63f: Pulling fs layer
+f142141aaad3: Pulling fs layer
+12eb19f5f2be: Pulling fs layer
+d34466b69a2a: Pulling fs layer
+fd8a0746ef83: Pulling fs layer
+f142141aaad3: Waiting
+12eb19f5f2be: Waiting
+d34466b69a2a: Waiting
+fd8a0746ef83: Waiting
+d34d61487075: Waiting
+87fc2710b63f: Waiting
+4530c6472b5d: Verifying Checksum
+4530c6472b5d: Download complete
+ef599477fae0: Verifying Checksum
+ef599477fae0: Download complete
+092586df9206: Verifying Checksum
+092586df9206: Download complete
+d34d61487075: Verifying Checksum
+d34d61487075: Download complete
+f142141aaad3: Verifying Checksum
+f142141aaad3: Download complete
+d34466b69a2a: Verifying Checksum
+d34466b69a2a: Download complete
+12eb19f5f2be: Verifying Checksum
+12eb19f5f2be: Download complete
+fd8a0746ef83: Verifying Checksum
+fd8a0746ef83: Download complete
+87fc2710b63f: Verifying Checksum
+87fc2710b63f: Download complete
+092586df9206: Pull complete
+ef599477fae0: Pull complete
+4530c6472b5d: Pull complete
+d34d61487075: Pull complete
+87fc2710b63f: Pull complete
+f142141aaad3: Pull complete
+12eb19f5f2be: Pull complete
+d34466b69a2a: Pull complete
+fd8a0746ef83: Pull complete
+Digest: sha256:1b82f268fce299d627c23a6205cadc66dc60f46ea091e618e1ee68d9aa29b356
+Status: Downloaded newer image for python:stretch
+ ---> b9d77e48a75c
+Step 2/6 : COPY . /app
+ ---> 5c8d2410cf99
+Step 3/6 : WORKDIR /app
+ ---> 5e2f82fdd4ba
+Removing intermediate container ce79b03deb7b
+Step 4/6 : RUN pip install --upgrade pip
+ ---> Running in 4edb62b7e497
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/cb/28/91f26bd088ce8e22169032100d4260614fc3da435025ff389ef1d396a433/pip-20.2.4-py2.py3-none-any.whl (1.5MB)
+Installing collected packages: pip
+  Found existing installation: pip 19.2.3
+    Uninstalling pip-19.2.3:
+      Successfully uninstalled pip-19.2.3
+Successfully installed pip-20.2.4
+ ---> 20850a7373e4
+Removing intermediate container 4edb62b7e497
+Step 5/6 : RUN pip install -r requirements.txt
+ ---> Running in 86b4955feda0
+Collecting pyjwt
+  Downloading PyJWT-1.7.1-py2.py3-none-any.whl (18 kB)
+Collecting flask
+  Downloading Flask-1.1.2-py2.py3-none-any.whl (94 kB)
+Collecting gunicorn
+  Downloading gunicorn-20.0.4-py2.py3-none-any.whl (77 kB)
+Collecting pytest
+  Downloading pytest-6.1.2-py3-none-any.whl (272 kB)
+Collecting Werkzeug>=0.15
+  Downloading Werkzeug-1.0.1-py2.py3-none-any.whl (298 kB)
+Collecting click>=5.1
+  Downloading click-7.1.2-py2.py3-none-any.whl (82 kB)
+Collecting itsdangerous>=0.24
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting Jinja2>=2.10.1
+  Downloading Jinja2-2.11.2-py2.py3-none-any.whl (125 kB)
+Requirement already satisfied: setuptools>=3.0 in /usr/local/lib/python3.7/site-packages (from gunicorn->-r requirements.txt (line 3)) (41.2.0)
+Collecting py>=1.8.2
+  Downloading py-1.9.0-py2.py3-none-any.whl (99 kB)
+Collecting pluggy<1.0,>=0.12
+  Downloading pluggy-0.13.1-py2.py3-none-any.whl (18 kB)
+Collecting iniconfig
+  Downloading iniconfig-1.1.1-py2.py3-none-any.whl (5.0 kB)
+Collecting packaging
+  Downloading packaging-20.4-py2.py3-none-any.whl (37 kB)
+Collecting toml
+  Downloading toml-0.10.1-py2.py3-none-any.whl (19 kB)
+Collecting attrs>=17.4.0
+  Downloading attrs-20.2.0-py2.py3-none-any.whl (48 kB)
+Collecting importlib-metadata>=0.12; python_version < "3.8"
+  Downloading importlib_metadata-2.0.0-py2.py3-none-any.whl (31 kB)
+Collecting MarkupSafe>=0.23
+  Downloading MarkupSafe-1.1.1-cp37-cp37m-manylinux1_x86_64.whl (27 kB)
+Collecting six
+  Downloading six-1.15.0-py2.py3-none-any.whl (10 kB)
+Collecting pyparsing>=2.0.2
+  Downloading pyparsing-2.4.7-py2.py3-none-any.whl (67 kB)
+Collecting zipp>=0.5
+  Downloading zipp-3.4.0-py3-none-any.whl (5.2 kB)
+Installing collected packages: pyjwt, Werkzeug, click, itsdangerous, MarkupSafe, Jinja2, flask, gunicorn, py, zipp, importlib-metadata, pluggy, iniconfig, six, pyparsing, packaging, toml, attrs, pytest
+Successfully installed Jinja2-2.11.2 MarkupSafe-1.1.1 Werkzeug-1.0.1 attrs-20.2.0 click-7.1.2 flask-1.1.2 gunicorn-20.0.4 importlib-metadata-2.0.0 iniconfig-1.1.1 itsdangerous-1.1.0 packaging-20.4 pluggy-0.13.1 py-1.9.0 pyjwt-1.7.1 pyparsing-2.4.7 pytest-6.1.2 six-1.15.0 toml-0.10.1 zipp-3.4.0
+ ---> ebb9419aff34
+Removing intermediate container 86b4955feda0
+Step 6/6 : ENTRYPOINT gunicorn -b :8080 main:APP
+ ---> Running in a058d798232d
+ ---> 61ef1cbd6e12
+Removing intermediate container a058d798232d
+Successfully built 61ef1cbd6e12
+Successfully tagged 072542201448.dkr.ecr.us-west-2.amazonaws.com/ecrdockerrepository-nvo8zyyrkjfm:FSND-Deploy-Flask-App-to-Kubernetes-Using-EKS.master..2020-10-29.13.43.49.6a131cb2
+
+[Container] 2020/10/29 13:44:32 Phase complete: BUILD State: SUCCEEDED
+[Container] 2020/10/29 13:44:32 Phase context status code:  Message: 
+[Container] 2020/10/29 13:44:32 Entering phase POST_BUILD
+[Container] 2020/10/29 13:44:32 Running command docker push $REPOSITORY_URI:$TAG
+The push refers to a repository [072542201448.dkr.ecr.us-west-2.amazonaws.com/ecrdockerrepository-nvo8zyyrkjfm]
+ec9bd6a71f9f: Preparing
+d5029e7b6b06: Preparing
+601f742fd6cb: Preparing
+611ec0189160: Preparing
+f6c506432da1: Preparing
+f81368f5f171: Preparing
+2cadd3d84047: Preparing
+409170aec809: Preparing
+2e669e0134f5: Preparing
+8bacec4e3446: Preparing
+26b1991f37bd: Preparing
+55e6b89812f3: Preparing
+f81368f5f171: Waiting
+2e669e0134f5: Waiting
+8bacec4e3446: Waiting
+2cadd3d84047: Waiting
+26b1991f37bd: Waiting
+55e6b89812f3: Waiting
+409170aec809: Waiting
+611ec0189160: Layer already exists
+f6c506432da1: Layer already exists
+f81368f5f171: Layer already exists
+2cadd3d84047: Layer already exists
+409170aec809: Layer already exists
+2e669e0134f5: Layer already exists
+8bacec4e3446: Layer already exists
+26b1991f37bd: Layer already exists
+55e6b89812f3: Layer already exists
+d5029e7b6b06: Pushed
+ec9bd6a71f9f: Pushed
+601f742fd6cb: Pushed
+FSND-Deploy-Flask-App-to-Kubernetes-Using-EKS.master..2020-10-29.13.43.49.6a131cb2: digest: sha256:ebf30e6e5e1d29f671f3345bcd5b665474a7402d00e15cd7f8ac775aa0ef4b49 size: 2852
+
+[Container] 2020/10/29 13:44:39 Running command CREDENTIALS=$(aws sts assume-role --role-arn $EKS_KUBECTL_ROLE_ARN --role-session-name codebuild-kubectl --duration-seconds 900)
+
+[Container] 2020/10/29 13:44:39 Running command export AWS_ACCESS_KEY_ID="$(echo ${CREDENTIALS} | jq -r '.Credentials.AccessKeyId')"
+
+[Container] 2020/10/29 13:44:39 Running command export AWS_SECRET_ACCESS_KEY="$(echo ${CREDENTIALS} | jq -r '.Credentials.SecretAccessKey')"
+
+[Container] 2020/10/29 13:44:39 Running command export AWS_SESSION_TOKEN="$(echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken')"
+
+[Container] 2020/10/29 13:44:39 Running command export AWS_EXPIRATION=$(echo ${CREDENTIALS} | jq -r '.Credentials.Expiration')
+
+[Container] 2020/10/29 13:44:39 Running command aws eks update-kubeconfig --name $EKS_CLUSTER_NAME
+Added new context arn:aws:eks:us-west-2:072542201448:cluster/simple-jwt-api to /root/.kube/config
+
+[Container] 2020/10/29 13:44:40 Running command echo $JWT_SECRET > .env
+
+[Container] 2020/10/29 13:44:40 Running command kubectl apply -f simple-jwt-api.yml
+Error from server (Forbidden): error when retrieving current configuration of:
+Resource: "/v1, Resource=services", GroupVersionKind: "/v1, Kind=Service"
+Name: "simple-jwt-api", Namespace: "default"
+Object: &{map["apiVersion":"v1" "kind":"Service" "metadata":map["annotations":map["kubectl.kubernetes.io/last-applied-configuration":""] "name":"simple-jwt-api" "namespace":"default"] "spec":map["ports":[map["port":'P' "targetPort":'\u1f90']] "selector":map["app":"simple-jwt-api"] "type":"LoadBalancer"]]}
+from server for: "simple-jwt-api.yml": services "simple-jwt-api" is forbidden: User "build" cannot get resource "services" in API group "" in the namespace "default"
+Error from server (Forbidden): error when retrieving current configuration of:
+Resource: "apps/v1, Resource=deployments", GroupVersionKind: "apps/v1, Kind=Deployment"
+Name: "simple-jwt-api", Namespace: "default"
+Object: &{map["apiVersion":"apps/v1" "kind":"Deployment" "metadata":map["annotations":map["kubectl.kubernetes.io/last-applied-configuration":""] "name":"simple-jwt-api" "namespace":"default"] "spec":map["replicas":'\x03' "selector":map["matchLabels":map["app":"simple-jwt-api"]] "strategy":map["rollingUpdate":map["maxSurge":'\x02' "maxUnavailable":'\x02'] "type":"RollingUpdate"] "template":map["metadata":map["labels":map["app":"simple-jwt-api"]] "spec":map["containers":[map["image":"072542201448.dkr.ecr.us-west-2.amazonaws.com/ecrdockerrepository-nvo8zyyrkjfm:FSND-Deploy-Flask-App-to-Kubernetes-Using-EKS.master..2020-10-29.13.43.49.6a131cb2" "name":"simple-jwt-api" "ports":[map["containerPort":'\u1f90']] "securityContext":map["allowPrivilegeEscalation":%!q(bool=false) "privileged":%!q(bool=false) "readOnlyRootFilesystem":%!q(bool=false)]]]]]]]}
+from server for: "simple-jwt-api.yml": deployments.apps "simple-jwt-api" is forbidden: User "build" cannot get resource "deployments" in API group "apps" in the namespace "default"
+
+[Container] 2020/10/29 13:44:41 Command did not exit successfully kubectl apply -f simple-jwt-api.yml exit status 1
+[Container] 2020/10/29 13:44:41 Phase complete: POST_BUILD State: FAILED
+[Container] 2020/10/29 13:44:41 Phase context status code: COMMAND_EXECUTION_ERROR Message: Error while executing command: kubectl apply -f simple-jwt-api.yml. Reason: exit status 1
+[Container] 2020/10/29 13:44:41 Expanding base directory path: .
+[Container] 2020/10/29 13:44:41 Assembling file list
+[Container] 2020/10/29 13:44:41 Expanding .
+[Container] 2020/10/29 13:44:41 Expanding file paths for base directory .
+[Container] 2020/10/29 13:44:41 Assembling file list
+[Container] 2020/10/29 13:44:41 Expanding build.json
+[Container] 2020/10/29 13:44:41 Skipping invalid file path build.json
+
