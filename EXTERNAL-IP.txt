@@ -1,0 +1,2 @@
+EXTERNAL-IP
+a1c8ec3afdef44409b5e61f4f9e5236f-516270336.us-west-2.elb.amazonaws.com
